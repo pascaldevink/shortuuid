@@ -1,9 +1,8 @@
 ```shortuuid``` is a simple php library that generates concise, unambiguous, URL-safe UUIDs.
 
 Often, one needs to use non-sequential IDs in places where users will see them, but the IDs must be as concise and easy 
-to use as possible. shortuuid solves this problem by generating uuids using Python's built-in uuid module and then 
-translating them to base57 using lowercase and uppercase letters and digits, and removing similar-looking characters 
-such as l, 1, I, O and 0.
+to use as possible. shortuuid solves this problem by translating generated uuids to base57 using lowercase and uppercase 
+letters and digits, and removing similar-looking characters such as l, 1, I, O and 0.
 
 This library is a port of it's python counter-part by Stochastic Technologies: https://github.com/stochastic-technologies/shortuuid
 

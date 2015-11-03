@@ -18,7 +18,7 @@ composer require pascaldevink/shortuuid
 ```
 
 # Examples
-```
+```php
 <?php
 require 'vendor/autoload.php';
 
@@ -30,7 +30,7 @@ $shortUuid = new ShortUuid();
 echo $shortUuid->encode($uuid); // output fpfyRTmt6XeE9ehEKZ5LwF
 ```
 
-```
+```php
 <?php
 require 'vendor/autoload.php';
 

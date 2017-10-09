@@ -64,7 +64,7 @@ class ShortUuidTest extends \PHPUnit_Framework_TestCase
     {
         $shortUuid = ShortUuid::uuid1();
         $this->assertLessThanOrEqual(22, strlen($shortUuid));
-        $this->assertGreaterThanOrEqual(21, strlen($shortUuid));
+        $this->assertGreaterThanOrEqual(20, strlen($shortUuid));
     }
 
     /**
@@ -74,7 +74,7 @@ class ShortUuidTest extends \PHPUnit_Framework_TestCase
     {
         $shortUuid = ShortUuid::uuid4();
         $this->assertLessThanOrEqual(22, strlen($shortUuid));
-        $this->assertGreaterThanOrEqual(21, strlen($shortUuid));
+        $this->assertGreaterThanOrEqual(20, strlen($shortUuid));
     }
 
     /**
@@ -84,6 +84,6 @@ class ShortUuidTest extends \PHPUnit_Framework_TestCase
     {
         $shortUuid = ShortUuid::uuid5(Uuid::NAMESPACE_DNS, 'ticketswap.com');
         $this->assertLessThanOrEqual(22, strlen($shortUuid));
-        $this->assertGreaterThanOrEqual(21, strlen($shortUuid));
+        $this->assertGreaterThanOrEqual(20, strlen($shortUuid));
     }
 }

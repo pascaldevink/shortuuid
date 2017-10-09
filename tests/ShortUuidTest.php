@@ -3,13 +3,14 @@
 namespace PascalDeVink\ShortUuid\Tests;
 
 use PascalDeVink\ShortUuid\ShortUuid;
+use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 
 /**
  * @covers \PascalDeVink\ShortUuid\ShortUuid
  * @group FullCoverage
  */
-class ShortUuidTest extends \PHPUnit_Framework_TestCase
+class ShortUuidTest extends TestCase
 {
     /**
      * @var ShortUuid

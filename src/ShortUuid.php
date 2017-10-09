@@ -45,7 +45,7 @@ final class ShortUuid
      *
      * @return string
      */
-    public static function uuid1($node = null, $clockSeq = null)
+    public static function uuid1($node = null, ?int $clockSeq = null) : string
     {
         $uuid = Uuid::uuid1($node, $clockSeq);
         $shortUuid = new self();
@@ -57,7 +57,7 @@ final class ShortUuid
      *
      * @return string
      */
-    public static function uuid4()
+    public static function uuid4() : string
     {
         $uuid = Uuid::uuid4();
         $shortUuid = new self();
@@ -73,7 +73,7 @@ final class ShortUuid
      *
      * @return string
      */
-    public static function uuid5($ns, $name)
+    public static function uuid5(string $ns, string $name) : string
     {
         $uuid = Uuid::uuid5($ns, $name);
         $shortUuid = new self();
@@ -92,7 +92,7 @@ final class ShortUuid
      *
      * @throws ArithmeticException
      */
-    public function encode(UuidInterface $uuid)
+    public function encode(UuidInterface $uuid) : string
     {
         /** @var BigNumber $uuidInteger */
         $uuidInteger = $uuid->getInteger();
@@ -109,7 +109,7 @@ final class ShortUuid
      *
      * @return UuidInterface
      */
-    public function decode($shortUuid)
+    public function decode(string $shortUuid) : UuidInterface
     {
         return Uuid::fromInteger($this->stringToNum($shortUuid));
     }
@@ -123,7 +123,7 @@ final class ShortUuid
      *
      * @throws ArithmeticException
      */
-    private function numToString(BigNumber $number)
+    private function numToString(BigNumber $number) : string
     {
         $output = '';
         while ($number->getValue() > 0) {
@@ -144,7 +144,7 @@ final class ShortUuid
      *
      * @return BigNumber
      */
-    private function stringToNum($string)
+    private function stringToNum(string $string) : BigNumber
     {
         $number = new BigNumber(0);
         foreach (str_split(strrev($string)) as $char) {
@@ -168,7 +168,7 @@ final class ShortUuid
      *
      * @return array
      */
-    public function getAlphabet()
+    public function getAlphabet() : array
     {
         return $this->alphabet;
     }

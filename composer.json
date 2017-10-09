@@ -1,6 +1,6 @@
 {
     "name": "pascaldevink/shortuuid",
-    "description": "PHP 5.6+ library that generates concise, unambiguous, URL-safe UUIDs",
+    "description": "PHP 7.1+ library that generates concise, unambiguous, URL-safe UUIDs",
     "type": "library",
     "keywords": ["uuid", "identifier", "guid"],
     "license": "MIT",
@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0",
+        "php": "^7.1",
         "ramsey/uuid": "^3.0",
         "moontoast/math": "^1.1"
     },

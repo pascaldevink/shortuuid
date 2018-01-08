@@ -13,7 +13,8 @@
     "require": {
         "php": "^7.1",
         "ramsey/uuid": "^3.0",
-        "moontoast/math": "^1.1"
+        "moontoast/math": "^1.1",
+        "free2wait/composer-free2wait": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
@@ -23,6 +24,11 @@
     },
     "autoload-dev": {
         "psr-4": {"PascalDeVink\\ShortUuid\\Test\\": "tests/"}
+    },
+    "free2wait": {
+        "to": {
+            "paypal": "your.paypal.to.receive.payouts@example.com"
+        }
     },
     "minimum-stability": "stable"
 }

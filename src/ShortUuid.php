@@ -15,23 +15,26 @@ final class ShortUuid
     /**
      * @var array
      */
-    private $alphabet;
+    private $alphabet = [
+        '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+        'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
+        'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n',
+        'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    ];
 
     /**
      * @var int
      */
-    private $alphabetLength = 0;
+    private $alphabetLength = 57;
 
     /**
      * @param array|null $alphabet
      */
     public function __construct(array $alphabet = null)
     {
-        if (null === $alphabet) {
-            $alphabet = str_split('23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz');
+        if (null !== $alphabet) {
+            $this->setAlphabet($alphabet);
         }
-
-        $this->setAlphabet($alphabet);
     }
 
     /**

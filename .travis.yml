@@ -33,4 +33,4 @@ script:
   - vendor/bin/phpunit
 
 after_success:
-  - php vendor/bin/coveralls -v
+  - php vendor/bin/php-coveralls -v

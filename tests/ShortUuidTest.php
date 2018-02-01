@@ -87,4 +87,25 @@ class ShortUuidTest extends TestCase
         $this->assertLessThanOrEqual(22, strlen($shortUuid));
         $this->assertGreaterThanOrEqual(20, strlen($shortUuid));
     }
+
+    /**
+     * @test
+     */
+    public function it_should_set_specified_alphabet()
+    {
+        $shortUuid = new ShortUuid(['z']);
+        $shortUuid = $shortUuid::uuid5(Uuid::NAMESPACE_DNS, 'ticketswap.com');
+        $this->assertLessThanOrEqual(22, strlen($shortUuid));
+        $this->assertGreaterThanOrEqual(20, strlen($shortUuid));
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_get_alphabet()
+    {
+        $shortUuid = new ShortUuid(['z']);
+        $this->assertInternalType('array', $shortUuid->getAlphabet());
+        $this->assertSame('z', $shortUuid->getAlphabet()[0]);
+    }
 }

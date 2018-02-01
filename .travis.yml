@@ -1,5 +1,4 @@
 language: php
-sudo: false
 
 php:
   - '7.1'
@@ -30,3 +29,8 @@ before_script:
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
   - composer show -i
+script:
+  - vendor/bin/phpunit
+
+after_success:
+  - php vendor/bin/coveralls -v

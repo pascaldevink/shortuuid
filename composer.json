@@ -16,7 +16,7 @@
         "moontoast/math": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.0|^7.0"
     },
     "autoload": {
         "psr-4": {"PascalDeVink\\ShortUuid\\": "src/"}

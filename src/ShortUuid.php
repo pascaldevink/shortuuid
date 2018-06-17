@@ -134,7 +134,7 @@ final class ShortUuid
             $number = $number->divide($this->alphabetLength);
             $digit = $previousNumber->mod($this->alphabetLength);
 
-            $output .= $this->alphabet[$digit->getValue()];
+            $output .= $this->alphabet[(int)$digit->getValue()];
         }
 
         return $output;

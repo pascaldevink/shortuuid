@@ -4,6 +4,8 @@ sudo: false
 php:
   - '7.1'
   - '7.2'
+  - '7.3'
+  - '7.4'
   - nightly
 
 ## Build matrix for lowest and highest possible targets
@@ -13,14 +15,24 @@ matrix:
       env: dependencies=lowest
     - php: 7.2
       env: dependencies=lowest
+    - php: 7.3
+      env: dependencies=lowest
+    - php: 7.4
+      env: dependencies=lowest
     - php: nightly
       env: dependencies=lowest
     - php: 7.1
       env: dependencies=highest
     - php: 7.2
       env: dependencies=highest
+    - php: 7.3
+      env: dependencies=highest
+    - php: 7.4
+      env: dependencies=highest
     - php: nightly
       env: dependencies=highest
+  allow_failures:
+    - php: nightly
 
 ## Update composer and run the appropriate composer command
 before_script:

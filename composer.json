@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "brick/math": "^0.8",
         "ramsey/uuid": "^4.0"
     },

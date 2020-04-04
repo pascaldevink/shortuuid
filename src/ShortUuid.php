@@ -98,8 +98,9 @@ final class ShortUuid
      */
     public function encode(UuidInterface $uuid) : string
     {
-        $uuidInteger = new BigNumber((string) $uuid->getInteger());
-        return $this->numToString($uuidInteger);
+        $uuidInteger = $uuid->getInteger();
+        $number = BigInteger::of($uuidInteger->toString());
+        return $this->numToString($number);
     }
 
     /**

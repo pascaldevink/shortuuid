@@ -2,8 +2,9 @@
 
 namespace PascalDeVink\ShortUuid;
 
-use Moontoast\Math\BigNumber;
-use Moontoast\Math\Exception\ArithmeticException;
+use Brick\Math\BigInteger;
+use Brick\Math\RoundingMode;
+use Brick\Math\Exception\MathException;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
@@ -93,11 +94,11 @@ final class ShortUuid
      *
      * @return string
      *
-     * @throws ArithmeticException
+     * @throws MathException
      */
     public function encode(UuidInterface $uuid) : string
     {
-        $uuidInteger = new BigNumber((string) $uuid->getInteger());
+        $uuidInteger = BigInteger::of((string) $uuid->getInteger());
         return $this->numToString($uuidInteger);
     }
 
@@ -119,21 +120,21 @@ final class ShortUuid
     /**
      * Transforms a given (big) number to a string value, based on the set alphabet.
      *
-     * @param BigNumber $number
+     * @param BigInteger $number
      *
      * @return string
      *
-     * @throws ArithmeticException
+     * @throws MathException
      */
-    private function numToString(BigNumber $number) : string
+    private function numToString(BigInteger $number) : string
     {
         $output = '';
-        while ($number->getValue() > 0) {
+        while ($number->isPositive()) {
             $previousNumber = clone $number;
-            $number = $number->divide($this->alphabetLength);
+            $number = $number->dividedBy($this->alphabetLength, RoundingMode::DOWN);
             $digit = $previousNumber->mod($this->alphabetLength);
 
-            $output .= $this->alphabet[(int)$digit->getValue()];
+            $output .= $this->alphabet[(int)$digit->toInt()];
         }
 
         return $output;
@@ -144,13 +145,13 @@ final class ShortUuid
      *
      * @param string $string
      *
-     * @return BigNumber
+     * @return BigInteger
      */
-    private function stringToNum(string $string) : BigNumber
+    private function stringToNum(string $string) : BigInteger
     {
-        $number = new BigNumber(0);
+        $number = BigInteger::of(0);
         foreach (str_split(strrev($string)) as $char) {
-            $number->multiply($this->alphabetLength)->add(array_search($char, $this->alphabet, false));
+            $number = $number->multipliedBy($this->alphabetLength)->plus(array_search($char, $this->alphabet, false));
         }
 
         return $number;

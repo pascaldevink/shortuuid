@@ -2,7 +2,11 @@
     "name": "pascaldevink/shortuuid",
     "description": "PHP 7.1+ library that generates concise, unambiguous, URL-safe UUIDs",
     "type": "library",
-    "keywords": ["uuid", "identifier", "guid"],
+    "keywords": [
+        "uuid",
+        "identifier",
+        "guid"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -15,17 +19,21 @@
     },
     "require": {
         "php": "^7.3|8.0",
-        "moontoast/math": "^1.1",
-        "ramsey/uuid": "^3 | ^4"
+        "brick/math": "^0.9.1",
+        "ramsey/uuid": "^4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"
     },
     "autoload": {
-        "psr-4": {"PascalDeVink\\ShortUuid\\": "src/"}
+        "psr-4": {
+            "PascalDeVink\\ShortUuid\\": "src/"
+        }
     },
     "autoload-dev": {
-        "psr-4": {"PascalDeVink\\ShortUuid\\Test\\": "tests/"}
+        "psr-4": {
+            "PascalDeVink\\ShortUuid\\Test\\": "tests/"
+        }
     },
     "minimum-stability": "stable",
     "config": {

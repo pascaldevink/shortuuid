@@ -47,7 +47,7 @@ class ShortUuidTest extends TestCase
     public function it_should_decode_a_given_short_uuid($shortUuid, $expectedUuid)
     {
         $uuid = $this->shortUuid->decode($shortUuid);
-        $this->assertEquals($expectedUuid, $uuid);
+        $this->assertTrue($expectedUuid->equals($uuid));
     }
 
     public function shortuuid_provider()

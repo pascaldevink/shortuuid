@@ -10,6 +10,9 @@
             "email": "pascal@ticketswap.com"
         }
     ],
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "require": {
         "php": "^7.1",
         "moontoast/math": "^1.1",

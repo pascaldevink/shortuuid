@@ -1,0 +1,35 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-versions: ['7.3','7.4']
+        dependencies: ['normal', 'highest','lowest']
+
+    name: PHP ${{ matrix.php-versions }} tests with ${{ matrix.dependencies }} dependencies
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: Install dependencies
+        run: |
+          if [ "${{ matrix.dependencies }}" = "normal" ]; then composer install --prefer-dist --no-progress --no-suggest; fi;
+          if [ "${{ matrix.dependencies }}" = "lowest" ]; then composer update --prefer-lowest --prefer-dist --no-progress --no-suggest; fi;
+          if [ "${{ matrix.dependencies }}" = "highest" ]; then composer update --prefer-dist --no-progress --no-suggest; fi;
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate
+
+      - name: Run test suite
+        run: composer run-script test

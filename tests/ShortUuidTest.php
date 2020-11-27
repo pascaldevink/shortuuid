@@ -17,7 +17,7 @@ class ShortUuidTest extends TestCase
      */
     private $shortUuid;
 
-    public function setUp()
+    public function setUp() : void
     {
         $this->shortUuid = new ShortUuid();
     }

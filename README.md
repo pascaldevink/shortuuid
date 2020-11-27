@@ -6,8 +6,6 @@ letters and digits, and removing similar-looking characters such as l, 1, I, O a
 
 This library is a port of it's python counter-part by Stochastic Technologies: https://github.com/stochastic-technologies/shortuuid
 
-[![Build Status](https://travis-ci.org/pascaldevink/shortuuid.svg?branch=master)](https://travis-ci.org/pascaldevink/shortuuid)
-
 # Installation
 
 The preferred method of installation is via [Packagist](https://packagist.org/) and [Composer](https://getcomposer.org). 

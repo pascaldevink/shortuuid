@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['7.3','7.4']
+        php-versions: ['7.3','7.4','8.0']
         dependencies: ['normal', 'highest','lowest']
 
     name: PHP ${{ matrix.php-versions }} tests with ${{ matrix.dependencies }} dependencies

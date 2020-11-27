@@ -1,6 +1,6 @@
 {
     "name": "pascaldevink/shortuuid",
-    "description": "PHP 7.1+ library that generates concise, unambiguous, URL-safe UUIDs",
+    "description": "PHP 7.3+ library that generates concise, unambiguous, URL-safe UUIDs",
     "type": "library",
     "keywords": [
         "uuid",

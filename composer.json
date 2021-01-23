@@ -18,7 +18,7 @@
         "test": "vendor/bin/phpunit"
     },
     "require": {
-        "php": "^7.3|8.0",
+        "php": "^7.3|^8.0",
         "brick/math": "^0.9.1",
         "ramsey/uuid": "^4"
     },

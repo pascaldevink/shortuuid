@@ -19,7 +19,7 @@
     },
     "require": {
         "php": "^7.3|^8.0",
-        "brick/math": "^0.9.1",
+        "brick/math": "^0.9.1|^0.10",
         "ramsey/uuid": "^4"
     },
     "require-dev": {

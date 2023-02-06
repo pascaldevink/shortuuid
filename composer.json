@@ -1,6 +1,6 @@
 {
     "name": "pascaldevink/shortuuid",
-    "description": "PHP 7.3+ library that generates concise, unambiguous, URL-safe UUIDs",
+    "description": "PHP 7.4+ library that generates concise, unambiguous, URL-safe UUIDs",
     "type": "library",
     "keywords": [
         "uuid",
@@ -18,12 +18,12 @@
         "test": "vendor/bin/phpunit"
     },
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4|^8.0|^8.1|^8.2",
         "brick/math": "^0.9.1|^0.10|^0.11",
         "ramsey/uuid": "^4"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.6"
     },
     "autoload": {
         "psr-4": {

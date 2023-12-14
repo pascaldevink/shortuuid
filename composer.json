@@ -18,8 +18,8 @@
         "test": "vendor/bin/phpunit"
     },
     "require": {
-        "php": "^7.4|^8.0|^8.1|^8.2",
-        "brick/math": "^0.9.1|^0.10|^0.11",
+        "php": "^7.4|^8.0|^8.1|^8.2|^8.3",
+        "brick/math": "^0.9.1|^0.10|^0.11|^0.12",
         "ramsey/uuid": "^4"
     },
     "require-dev": {
